@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link,useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/auth.js';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotate } from '@fortawesome/free-solid-svg-icons'; // Import the icon you want to use
+import { faRotate } from '@fortawesome/free-solid-svg-icons'; 
 import '../assets/Login.css'; 
 
 const StudentLogin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [captcha, setCaptcha] = useState(""); // Define captcha state
+    const [captcha, setCaptcha] = useState(""); 
     const navigate = useNavigate();
     const location = useLocation();
     const [auth, setAuth] = useAuth();
@@ -40,7 +39,7 @@ const StudentLogin = () => {
     };
 
     const handleCaptchaSubmit = () => {
-        // Implement your captcha refresh logic here
+        // captcha refresh logic 
     };
 
     return (
