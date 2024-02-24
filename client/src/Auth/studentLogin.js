@@ -20,8 +20,9 @@ const StudentLogin = () => {
         event.preventDefault();
         try {
             console.log("Tryong");
-            const res = await axios.post('http://localhost:8080/api/vit/auth/student/studentLogin', { email, password });
+            const res = await axios.post('http://localhost:8080/studentLogin', { email, password });
             if (res && res.data.success) {
+                console.log("success");
                 toast.success(res.data && res.data.message);
                 setAuth({
                     ...auth,
@@ -30,9 +31,15 @@ const StudentLogin = () => {
                 });
                 localStorage.setItem('auth', JSON.stringify(res.data));
                 navigate(location.state || '/');
-            } else {
+            } else {    
                 toast.error(res.data.message);
+                console.log("Fail");
             }
+            // if(res.data.success) {
+            //     console.log("success");
+            // }else{
+            //     console.log("Fail");
+            // }
         } catch (error) {
             console.log(error)
             toast.error('Something went wrong');
