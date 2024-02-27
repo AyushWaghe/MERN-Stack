@@ -20,7 +20,7 @@ const StudentLogin = () => {
         event.preventDefault();
         try {
             console.log("Tryong");
-            const res = await axios.post('http://localhost:8080/studentLogin', { email, password });
+            const res = await axios.post('http://localhost:8080/api/vit/auth/student/studentLogin', { email, password });
             if (res && res.data.success) {
                 console.log("success");
                 toast.success(res.data && res.data.message);
@@ -35,11 +35,6 @@ const StudentLogin = () => {
                 toast.error(res.data.message);
                 console.log("Fail");
             }
-            // if(res.data.success) {
-            //     console.log("success");
-            // }else{
-            //     console.log("Fail");
-            // }
         } catch (error) {
             console.log(error)
             toast.error('Something went wrong');
@@ -47,7 +42,7 @@ const StudentLogin = () => {
     };
 
     const handleCaptchaSubmit = () => {
-        // Implement your captcha refresh logic here
+        // captcha refresh logic 
     };
 
     return (
