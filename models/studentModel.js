@@ -29,4 +29,4 @@ const studentSchema = new mongoose.Schema({
 },{timestamps:true}      //to get time when user gave data
 );
 
-export default mongoose.model('sTusers',studentSchema)
+export default mongoose.model("Student", studentSchema);
